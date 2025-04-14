@@ -13,6 +13,12 @@ import {
   Hospital,
   PersonStanding,
 } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardFooter,
+} from "@/components/ui/card";
 
 import InfiniteCarousel from "@/components/infinite_carousel";
 import StatCard from "@/components/stat_card";
@@ -278,8 +284,85 @@ Stimulation Therapy"
           />
         </div>
       </section>
-      {/*  */}
-      <section className="py-8 md:py-12 w-full flex justify-center px-8 max-w-[1200px]"></section>
+      {/* Evolving AI solutions section*/}
+      <section className="py-8 md:py-12 w-full flex justify-center px-8 max-w-[1200px]">
+        <div className="flex flex-col md:flex-row w-full justify-center items-center gap-4 h-screen md:h-fit">
+          <Badge className="flex-2 p-4">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-2">
+              <div className="flex flex-col">
+                <h1 className="text-2xl leading-none">
+                  Evolving <b className="block">Dementia Care </b>with AI-Driven
+                  solutions
+                </h1>
+                <p className="text-wrap text-md">
+                  MemoTag integrates AI & data analytics to deliver personalized
+                  care solutions, cognitive stimulation with peace of mind.
+                </p>
+              </div>
+              <div className="flex-1">
+                <div className="relative w-[268px] h-[324px]">
+                  <Image src="/assets/homephone.svg" fill alt="" />
+                </div>
+              </div>
+            </div>
+          </Badge>
+          <div className="flex-1 w-full h-full">
+            <Card className="bg-[#00114a] p-4 text-sm flex flex-col items-center justify-center gap-3">
+              <CardHeader className="flex text-white text-2xl w-full justify-start font-bold">
+                <h1>Features</h1>
+              </CardHeader>
+              <CardContent className="text-white flex flex-col items-center justify-center">
+                <ol className="flex flex-col items-center justify-center gap-3">
+                  <li className="flex items-center gap-3">
+                    <Image
+                      src="/assets/check.svg"
+                      alt="check"
+                      width={20}
+                      height={20}
+                      className="self-center"
+                    />
+                    <span>
+                      AI tracks patient behavior to predict cognitive decline,
+                      enabling early intervention.
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Image
+                      src="/assets/check.svg"
+                      alt="check"
+                      width={20}
+                      height={20}
+                      className="self-center"
+                    />
+                    <span>
+                      AI analyzes speech patterns for personalized cognitive
+                      therapy and progress tracking.
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Image
+                      src="/assets/check.svg"
+                      alt="check"
+                      width={20}
+                      height={20}
+                      className="self-center"
+                    />
+                    <span>
+                      Physical activity tracking helps identify future risks and
+                      provides proactive care recommendations.
+                    </span>
+                  </li>
+                </ol>
+              </CardContent>
+              <CardFooter>
+                <Button className="mt-5 py-3 px-6 bg-gradient-to-r from-[#003AFC] via-[#5177F5] to-[#003AFC] border-2 border-[#C2D0FF] text-white text-sm md:text-base font-medium rounded-full shadow-lg flex items-center justify-center transition duration-300 ">
+                  Exclusive Insights
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
