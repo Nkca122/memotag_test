@@ -287,31 +287,36 @@ Stimulation Therapy"
       {/* Evolving AI solutions section*/}
       <section className="py-8 md:py-12 w-full flex justify-center px-8 max-w-[1200px]">
         <div className="flex flex-col md:flex-row w-full justify-center items-center gap-4 h-screen md:h-fit">
-          <Badge className="flex-2 p-4">
-            <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-2">
-              <div className="flex flex-col">
-                <h1 className="text-2xl leading-none">
-                  Evolving <b className="block">Dementia Care </b>with AI-Driven
-                  solutions
+          <div className="flex-2 w-full">
+            <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-2 border border-blue-300 dark:border-blue-400 p-4 rounded-xl w-full bg-white dark:bg-blue-950/40 dark:backdrop-blur-sm shadow-md">
+              <div className="flex flex-col w-full">
+                <h1 className="text-2xl text-blue-700 dark:text-blue-400 leading-none text-wrap">
+                  Evolving{" "}
+                  <b className="inline-block md:block">Dementia Care </b> with
+                  AI-Driven solutions
                 </h1>
-                <p className="text-wrap text-md">
+                <p className="text-wrap text-sm text-gray-600 dark:text-blue-300/80 hidden md:flex">
                   MemoTag integrates AI & data analytics to deliver personalized
                   care solutions, cognitive stimulation with peace of mind.
                 </p>
               </div>
               <div className="flex-1">
                 <div className="relative w-[268px] h-[324px]">
-                  <Image src="/assets/homephone.svg" fill alt="" />
+                  <Image
+                    src="/assets/homephone.svg"
+                    fill
+                    alt="MemoTag device"
+                  />
                 </div>
               </div>
             </div>
-          </Badge>
+          </div>
           <div className="flex-1 w-full h-full">
-            <Card className="bg-[#00114a] p-4 text-sm flex flex-col items-center justify-center gap-3">
-              <CardHeader className="flex text-white text-2xl w-full justify-start font-bold">
+            <div className="bg-blue-800 dark:bg-blue-950 p-4 text-sm flex flex-col items-center justify-center gap-3 rounded-lg border border-blue-700 dark:border-blue-800 shadow-lg">
+              <div className="flex text-white text-2xl w-full justify-start font-bold pt-4 px-6">
                 <h1>Features</h1>
-              </CardHeader>
-              <CardContent className="text-white flex flex-col items-center justify-center">
+              </div>
+              <div className="text-white flex flex-col items-center justify-center px-6 py-4">
                 <ol className="flex flex-col items-center justify-center gap-3">
                   <li className="flex items-center gap-3">
                     <Image
@@ -321,7 +326,7 @@ Stimulation Therapy"
                       height={20}
                       className="self-center"
                     />
-                    <span>
+                    <span className="text-white dark:text-blue-100">
                       AI tracks patient behavior to predict cognitive decline,
                       enabling early intervention.
                     </span>
@@ -334,7 +339,7 @@ Stimulation Therapy"
                       height={20}
                       className="self-center"
                     />
-                    <span>
+                    <span className="text-white dark:text-blue-100">
                       AI analyzes speech patterns for personalized cognitive
                       therapy and progress tracking.
                     </span>
@@ -347,19 +352,63 @@ Stimulation Therapy"
                       height={20}
                       className="self-center"
                     />
-                    <span>
+                    <span className="text-white dark:text-blue-100">
                       Physical activity tracking helps identify future risks and
                       provides proactive care recommendations.
                     </span>
                   </li>
                 </ol>
-              </CardContent>
-              <CardFooter>
-                <Button className="mt-5 py-3 px-6 bg-gradient-to-r from-[#003AFC] via-[#5177F5] to-[#003AFC] border-2 border-[#C2D0FF] text-white text-sm md:text-base font-medium rounded-full shadow-lg flex items-center justify-center transition duration-300 ">
+              </div>
+              <div className="pb-4 pt-2">
+                <button className="mt-5 py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:via-blue-600 dark:to-blue-700 border-0 dark:border dark:border-blue-400 text-white text-sm md:text-base font-medium rounded-full shadow-lg flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-600 transition duration-300 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 hover:shadow-xl">
                   Exclusive Insights
-                </Button>
-              </CardFooter>
-            </Card>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Caregiver Learn More section*/}
+      <section
+        className="py-8 md:py-12 w-full flex justify-center px-8 bg-center bg-cover bg-no-repeat"
+        style={{
+          backgroundImage: "url(/assets/path.svg)",
+        }}
+      >
+        <div className="flex flex-col w-full max-w-[1200px] justify-center items-center gap-4 md:h-screen">
+          <h1 className="text-2xl md:text-4xl font-extrabold w-full leading-none">
+            Support for care{" "}
+            <span className="inline-block text-blue-600 dark:text-blue-400">
+              Caregivers
+            </span>{" "}
+            <br /> at Every Step
+          </h1>
+          <div className="flex flex-col gap-4 self-end md:w-1/2">
+            <div className="h-[200px] aspect-square relative">
+              <Image src="/assets/caregiver_section.svg" fill alt="" />
+            </div>
+            <p className="text-start md:text-end w-full text-sm md:leading-none text-wrap">
+              MemoTag provides caregivers with essential tools and a community
+              for support, ensuring that care is seamless, informed, and
+              collaborative.
+            </p>
+            <div className="flex flex-col md:flex-row w-full justify-around items-center gap-2">
+              <Badge variant={"secondary"} className="w-full md:w-fit">
+                Caregiver community Access
+              </Badge>
+              <Badge variant={"secondary"} className="w-full md:w-fit">
+                Summarized AI Reports
+              </Badge>
+              <Badge variant={"secondary"} className="w-full md:w-fit">
+                Expert Support &Resources
+              </Badge>
+            </div>
+          </div>
+
+          <div className="flex w-full justify-center md:justify-start">
+            <Button className="rounded-full text-md font-bold text-white px-6">
+              Learn More
+            </Button>
           </div>
         </div>
       </section>
