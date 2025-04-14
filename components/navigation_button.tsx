@@ -7,7 +7,7 @@ export default function NavigationButton({
   title,
 }: {
   link: string;
-  title: React.ReactNode;
+  title: React.ReactNode,
 }) {
   return (
     <NavigationMenuItem>

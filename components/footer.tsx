@@ -1,9 +1,3 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import {
   Carousel,
@@ -12,7 +6,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import QA from "@/components//footer_QA";
+import Review from "@/components/footer_review";
+import Image from "next/image";
+import BlogCard from "@/components//blog_card";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
@@ -33,190 +33,49 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex-2 flex flex-col w-full justify-center items-center gap-4">
-              <Accordion type="single" collapsible className="w-full">
-                <AccordionItem value="item-1" className="border-none mb-4">
-                  <AccordionTrigger className="p-0 hover:no-underline [&[data-state=open]>div>div>svg]:rotate-180 [&>svg]:hidden">
-                    <div className="flex justify-between items-center rounded border border-dashed border-black/50 dark:border-white/50 px-5 py-3 w-full transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/30">
-                      <h3 className="text-xs sm:text-sm opacity-90 md:text-base">
-                        How does MemoTag work?
-                      </h3>
-                      <div className="flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="transition-transform duration-200"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 px-0">
-                    <div className="border border-black/30 dark:border-white/30 border-dashed p-4 rounded bg-white/50 dark:bg-slate-900/50 shadow-sm">
-                      <p className="text-wrap text-sm">
-                        MemoTag combines an IoT wearable device with a mobile
+              <QA
+                q="How does MemoTag work?"
+                a=" MemoTag combines an IoT wearable device with a mobile
                         application to monitor a patient’s physical and
                         cognitive health. It tracks sleep patterns, fall
                         detection, GPS location, and geofencing alerts while
                         offering personalized care recommendations. The platform
                         also uses AI to analyze cognitive patterns and provide
-                        actionable insights for caregivers and families.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-2" className="border-none mb-4">
-                  <AccordionTrigger className="p-0 hover:no-underline [&[data-state=open]>div>div>svg]:rotate-180 [&>svg]:hidden">
-                    <div className="flex justify-between items-center rounded border border-dashed border-black/50 dark:border-white/50 px-5 py-3 w-full transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/30">
-                      <h3 className="text-xs sm:text-sm opacity-90 md:text-base">
-                        How & Who can use MemoTag?
-                      </h3>
-                      <div className="flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="transition-transform duration-200"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 px-0">
-                    <div className="border border-black/30 dark:border-white/30 border-dashed p-4 rounded bg-white/50 dark:bg-slate-900/50 shadow-sm">
-                      <p className="text-wrap text-sm">
-                        MemoTag is designed for dementia patients, their
+                        actionable insights for caregivers and families."
+              />
+
+              <QA
+                q="How & Who can use MemoTag?"
+                a=" MemoTag is designed for dementia patients, their
                         caregivers, and family members. While a cell phone is
                         required to access the MemoTag app, caregivers can
                         manage the device for patients who may not use a phone.
                         The wearable itself functions independently for features
-                        like fall detection and GPS tracking.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-3" className="border-none mb-4">
-                  <AccordionTrigger className="p-0 hover:no-underline [&[data-state=open]>div>div>svg]:rotate-180 [&>svg]:hidden">
-                    <div className="flex justify-between items-center rounded border border-dashed border-black/50 dark:border-white/50 px-5 py-3 w-full transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/30">
-                      <h3 className="text-xs sm:text-sm opacity-90 md:text-base">
-                        Is my data secure and private?
-                      </h3>
-                      <div className="flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="transition-transform duration-200"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 px-0">
-                    <div className="border border-black/30 dark:border-white/30 border-dashed p-4 rounded bg-white/50 dark:bg-slate-900/50 shadow-sm">
-                      <p className="text-wrap text-sm">
-                        Yes, MemoTag prioritizes your data privacy. All health
+                        like fall detection and GPS tracking."
+              />
+              <QA
+                q="Is my data secure and private?"
+                a=" Yes, MemoTag prioritizes your data privacy. All health
                         data is encrypted and stored on secure servers compliant
                         with global privacy standards such as GDPR and HIPAA.
-                        Only authorized users have access to patient data.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-4" className="border-none mb-4">
-                  <AccordionTrigger className="p-0 hover:no-underline [&[data-state=open]>div>div>svg]:rotate-180 [&>svg]:hidden">
-                    <div className="flex justify-between items-center rounded border border-dashed border-black/50 dark:border-white/50 px-5 py-3 w-full transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/30">
-                      <h3 className="text-xs sm:text-sm opacity-90 md:text-base">
-                        What is cognitive analysis, and how can it help?
-                      </h3>
-                      <div className="flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="transition-transform duration-200"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 px-0">
-                    <div className="border border-black/30 dark:border-white/30 border-dashed p-4 rounded bg-white/50 dark:bg-slate-900/50 shadow-sm">
-                      <p className="text-wrap text-sm">
-                        Cognitive analysis involves tracking memory, speech, and
+                        Only authorized users have access to patient data."
+              />
+              <QA
+                q="What is cognitive analysis, and how can it help?"
+                a="  Cognitive analysis involves tracking memory, speech, and
                         behavior patterns to identify early signs of cognitive
                         decline. MemoTag provides tailored exercises and
                         insights based on this analysis, helping caregivers
                         proactively manage the patient’s condition and maintain
-                        their mental health.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="item-5" className="border-none mb-4">
-                  <AccordionTrigger className="p-0 hover:no-underline [&[data-state=open]>div>div>svg]:rotate-180 [&>svg]:hidden">
-                    <div className="flex justify-between items-center rounded border border-dashed border-black/50 dark:border-white/50 px-5 py-3 w-full transition-colors hover:bg-blue-50 dark:hover:bg-blue-950/30">
-                      <h3 className="text-xs sm:text-sm opacity-90 md:text-base">
-                        How much does MemoTag cost?
-                      </h3>
-                      <div className="flex items-center justify-center">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="transition-transform duration-200"
-                        >
-                          <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="pt-2 px-0">
-                    <div className="border border-black/30 dark:border-white/30 border-dashed p-4 rounded bg-white/50 dark:bg-slate-900/50 shadow-sm">
-                      <p className="text-wrap text-sm">
-                        MemoTag’s wearable costs ₹10,999 + ₹4,000 annual
+                        their mental health."
+              />
+              <QA
+                q="How much does MemoTag cost?"
+                a=" MemoTag’s wearable costs ₹10,999 + ₹4,000 annual
                         subscription for the app’s features. This averages to
                         just ₹11 per day, offering maximum care and support at
-                        an affordable price.
-                      </p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
+                        an affordable price."
+              />
             </div>
           </div>
 
@@ -232,94 +91,212 @@ export default function Footer() {
               <Carousel className="w-full">
                 <CarouselContent className="w-full">
                   <CarouselItem className="max-h">
-                    <div className="rounded-xl flex flex-col justify-center items-start gap-2 border p-4 h-full">
-                      <div className="flex flex-col gap-2 border-b">
-                        <Avatar className="h-16 w-16">
-                          <AvatarImage src="/assets/sunita.svg" />
-                          <AvatarFallback>SS</AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col md:flex-row justify-center items-start md:items-center w-full md:gap-2">
-                          <h1 className="text-lg font-bold">Sunita Sharma,</h1>
-                          <p className="text-gray-500 text-sm font-normal">
-                            Daughter
-                          </p>
-                        </div>
-                      </div>
-                      <div className="border-b">
-                        <p className="text-wrap w-full text-center md:text-left text-sm md:pr-24 opacity-70 mb-4">
-                          Caring for my father with dementia was overwhelming
+                    <Review
+                      img="/assets/sunita.svg"
+                      fallback="SS"
+                      name="Sunita Sharma"
+                      post="Daughter"
+                      description="Caring for my father with dementia was overwhelming
                           until MemoTag. Its real-time alerts and cognitive
                           insights give me peace of mind, even when I’m not
-                          around.
-                        </p>
-                      </div>
-                      <div>
-                        <p className="py-4 text-base sm:text-lg md:text-xl font-semibold opacity-80">
-                          Result 38% Memory Improvement
-                        </p>
-                      </div>
-                    </div>
+                          around."
+                      result="Result 38% Memory Improvement"
+                    />
                   </CarouselItem>
                   <CarouselItem className="max-h">
-                    <div className="rounded-xl flex flex-col justify-center items-start gap-2 border p-4 h-full">
-                      <div className="flex flex-col gap-2 border-b">
-                        <Avatar className="h-16 w-16">
-                          <AvatarImage src="/assets/rajeev.svg" />
-                          <AvatarFallback>RM</AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col md:flex-row justify-center items-start md:items-center w-full md:gap-2">
-                          <h1 className="text-lg font-bold">Rajeev Mehta,</h1>
-                          <p className="text-gray-500 text-sm font-normal">
-                            Professional caregiver
-                          </p>
-                        </div>
-                      </div>
-                      <div className="border-b">
-                        <p className="text-wrap w-full text-center md:text-left text-sm md:pr-24 opacity-70 mb-4">
-                          Managing multiple patients was tough, but MemoTag’s
+                    <Review
+                      img="/assets/rajeev.svg"
+                      fallback="RM"
+                      name="Rajeev Mehta"
+                      post="Professional Caregiver"
+                      description="Managing multiple patients was tough, but MemoTag’s
                           health summaries and care tips make it seamless. It’s
-                          like having an extra helping hand.
-                        </p>
-                      </div>
-                      <div>
-                        <p className="py-4 text-base sm:text-lg md:text-xl font-semibold opacity-80">
-                          Result 48% Better Cognition
-                        </p>
-                      </div>
-                    </div>
+                          like having an extra helping hand."
+                      result="Result 48% Better Cognition"
+                    />
                   </CarouselItem>
                   <CarouselItem className="max-h">
-                    <div className="rounded-xl flex flex-col justify-center items-start gap-2 border p-4 h-full">
-                      <div className="flex flex-col gap-2 border-b">
-                        <Avatar className="h-16 w-16">
-                          <AvatarImage src="/assets/aman.svg" />
-                          <AvatarFallback>AV</AvatarFallback>
-                        </Avatar>
-                        <div className="flex flex-col md:flex-row justify-center items-start md:items-center w-full md:gap-2">
-                          <h1 className="text-lg font-bold">Aman Verma,</h1>
-                          <p className="text-gray-500 text-sm font-normal">
-                            Son
-                          </p>
-                        </div>
-                      </div>
-                      <div className="border-b">
-                        <p className="text-wrap w-full text-center md:text-left text-sm md:pr-24 opacity-70 mb-4">
-                          MemoTag’s fall detection and speech analysis tools
+                    <Review
+                      img="/assets/aman.svg"
+                      fallback="AV"
+                      name="Aman Verma"
+                      post="Son"
+                      description="MemoTag’s fall detection and speech analysis tools
                           have been game-changers. My mother feels more secure,
-                          and I feel less stressed.
-                        </p>
-                      </div>
-                      <div>
-                        <p className="py-4 text-base sm:text-lg md:text-xl font-semibold opacity-80">
-                          Result 48% Better Cognition
-                        </p>
-                      </div>
-                    </div>
+                          and I feel less stressed."
+                      result="Result 87% Falls Prevented"
+                    />
                   </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious />
                 <CarouselNext />
               </Carousel>
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col gap-2 justify-center items-center">
+            <div className="flex flex-col justify-center items-center">
+              <Badge className="text-white font-bold m-0">Blogs</Badge>
+              <h1 className="w-full text-center text-[20px] sm:text-3xl md:text-4xl font-bold">
+                Latest Insights & <br /> Community Highlights
+              </h1>
+            </div>
+
+            <div className="flex-1 flex justify-center items-center md:items-start w-full p-6">
+              <ScrollArea className="w-full whitespace-nowrap rounded-md border">
+                <div className="flex w-full space-x-4 justify-center px-2">
+                  <BlogCard
+                    img="/assets/blog1.svg"
+                    badge="Educational Articles"
+                    title="The Role of Technology in Dementia Care"
+                    description="Provide valuable information on dementia care, cognitive
+                        health, and wellness for caregivers and families."
+                  />
+                  <BlogCard
+                    img="/assets/blog2.svg"
+                    badge="Community Q&A"
+                    title="How to Set Up Geofencing for Added Safety"
+                    description="Feature the top questions and discussions from the MemoTag caregiver community, offering advice, tips, and shared experiences."
+                  />
+                  <BlogCard
+                    img="/assets/blog3.svg"
+                    badge="Product Announcments"
+                    title="MemoTag’s Impact: Caregivers Share Their Success Stories"
+                    description="Share the latest developments on MemoTag’s features, partnerships, and improvements."
+                  />
+                </div>
+                <ScrollBar orientation="horizontal" />
+              </ScrollArea>
+            </div>
+          </div>
+
+          <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Logo and Description Column */}
+            <div className="space-y-4">
+              <Image
+                src="/assets/memotag-logo.svg"
+                alt="Memotag Logo"
+                width={150}
+                height={40}
+                className="h-10 w-auto"
+              />
+              <p className="text-sm text-gray-700 max-w-md mt-2">
+                An AI-wearable with cognitive health tracking & data analysis
+                tool for dementia & elder caregiving.
+              </p>
+            </div>
+
+            {/* Explore Column */}
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <h3 className="font-medium text-base mb-3">Explore</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      About Us
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      MindMap
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      Caregivers
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      FAQ
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      Blogs
+                    </Button>
+                  </li>
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      Testimonials
+                    </Button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Try Memotag Column */}
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <h3 className="font-medium text-base mb-3">Try Memotag</h3>
+                <ul className="space-y-2">
+                  <li>
+                    <Button
+                      variant="link"
+                      className="p-0 h-auto text-gray-700 hover:text-primary"
+                    >
+                      Contact Us
+                    </Button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Get In touch Column */}
+            <div className="grid grid-cols-1 gap-4">
+              <div>
+                <h3 className="font-medium text-base mb-3">Get In touch</h3>
+                <ul className="space-y-2">
+                  <li className="text-gray-700">contact@memotag.io</li>
+                  <li className="text-gray-700">+91 8800506622</li>
+                </ul>
+
+                {/* Social Media Icons */}
+                <div className="flex gap-4 mt-4">
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="rounded-full h-10 w-10"
+                  >
+                    <Facebook className="h-5 w-5" />
+                    <span className="sr-only">Facebook</span>
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="rounded-full h-10 w-10"
+                  >
+                    <Instagram className="h-5 w-5" />
+                    <span className="sr-only">Instagram</span>
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="rounded-full h-10 w-10"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,23 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+
 import { Button } from "@/components/ui/button";
-import { Sun, Moon } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function DarkModeToggle() {
-  const [isDark, setIsDark] = useState(false);
-
-  useEffect(() => {
-    document.body.classList.toggle("dark", isDark);
-  }, [isDark]);
+export function DarkModeToggle() {
+  const { setTheme, resolvedTheme } = useTheme();
 
   return (
     <Button
-      onClick={() => setIsDark((prev) => !prev)}
-      variant={"secondary"}
-      className="sticky bottom-4 left-4 z-50 h-10 w-10 border-2 rounded-[50%]"
+      variant="secondary"
+      size="icon"
+      className="sticky bottom-4 left-4"
+      onClick={() => {
+        resolvedTheme == "light" ? setTheme("dark") : setTheme("light");
+      }}
     >
-      {isDark ? <Sun color="#fbbc04" /> : <Moon color="#003afc" />}
+      <Sun className="h-[1.2rem] w-[1.2rem] dark:rotate-0 dark:scale-100 transition-all -rotate-90 scale-0" />
+      <Moon className="absolute h-[1.2rem] w-[1.2rem] dark:rotate-90 dark:scale-0 transition-all rotate-0 scale-100" />
+      <span className="sr-only">Toggle theme</span>
     </Button>
   );
 }

@@ -404,12 +404,6 @@ Stimulation Therapy"
               </Badge>
             </div>
           </div>
-
-          <div className="flex w-full justify-center md:justify-start">
-            <Button className="rounded-full text-md font-bold text-white px-6">
-              Learn More
-            </Button>
-          </div>
         </div>
       </section>
     </div>
