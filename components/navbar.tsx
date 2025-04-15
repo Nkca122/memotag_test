@@ -82,7 +82,7 @@ export default function Navbar() {
                     </Button>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
+                    <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300 w-full">
                       Join WaitList
                     </Button>
                   </DropdownMenuItem>
