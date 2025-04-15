@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,8 @@ export default function HomePage() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -35,6 +37,8 @@ export default function HomePage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setSuccess(false);
+    setError(false);
 
     fetch("/api/waitlist", {
       method: "POST",
@@ -44,6 +48,7 @@ export default function HomePage() {
       .then((res) => {
         if (res.ok) {
           setSubmitted(true);
+          setSuccess(true);
           setFormData({
             name: "",
             email: "",
@@ -51,14 +56,33 @@ export default function HomePage() {
             choice: "",
             others: "",
           });
+        } else {
+          setError(true);
         }
       })
       .catch((err) => {
         console.error("Submission error:", err);
+        setError(true);
       })
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  useEffect(() => {
+    if (success || error) {
+      const timer = setTimeout(() => {
+        setSuccess(false);
+        setError(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success, error]);
+
+  const getButtonStyles = () => {
+    if (success) return "bg-green-600 hover:bg-green-700";
+    if (error) return "bg-red-600 hover:bg-red-700";
+    return "bg-blue-600 hover:bg-blue-700";
   };
 
   return (
@@ -99,6 +123,7 @@ export default function HomePage() {
                   className="border p-2"
                 />
               </div>
+
               <div className="w-full flex flex-col">
                 <Label htmlFor="phone" className="w-full px-2 py-1">
                   Phone number
@@ -113,9 +138,10 @@ export default function HomePage() {
                   className="border p-2"
                 />
               </div>
+
               <div className="w-full flex flex-col">
                 <Label htmlFor="choice" className="w-fill px-2 py-1">
-                  Who are you signing up for ?
+                  Who are you signing up for?
                 </Label>
                 <Select
                   onValueChange={(value) =>
@@ -131,9 +157,7 @@ export default function HomePage() {
                     <SelectGroup>
                       <SelectLabel>Select</SelectLabel>
                       <SelectItem value="parent">A Parent</SelectItem>
-                      <SelectItem value="grandparent">
-                        A Grand Parent
-                      </SelectItem>
+                      <SelectItem value="grandparent">A Grand Parent</SelectItem>
                       <SelectItem value="spouse">A Spouse</SelectItem>
                       <SelectItem value="friend">A Friend</SelectItem>
                       <SelectItem value="myself">MySelf</SelectItem>
@@ -141,6 +165,7 @@ export default function HomePage() {
                     </SelectGroup>
                   </SelectContent>
                 </Select>
+
                 {formData.choice === "others" && (
                   <div className="w-full flex flex-col mt-2 gap-2">
                     <Label htmlFor="others" className="w-full px-2 py-1">
@@ -162,10 +187,16 @@ export default function HomePage() {
 
             <Button
               type="submit"
-              disabled={loading}
-              className="text-white px-10 rounded-full self-center"
+              disabled={loading || success || error}
+              className={`text-white px-10 rounded-full self-center ${getButtonStyles()}`}
             >
-              {loading ? "Submitting..." : "Submit"}
+              {loading
+                ? "Submitting..."
+                : success
+                ? "Success!"
+                : error
+                ? "Error. Try again."
+                : "Submit"}
             </Button>
           </form>
         </CardContent>

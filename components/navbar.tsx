@@ -47,9 +47,12 @@ export default function Navbar() {
               </div>
 
               <div className="flex gap-3">
-                <Button className="rounded-full p-3 font-medium text-white">
-                  Pre - Order Now
-                </Button>
+                <Link href="/contact">
+                  <Button className="rounded-full p-3 font-medium text-white">
+                    Contact Us
+                  </Button>
+                </Link>
+
                 <Link href="/waitlist">
                   <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
                     Join WaitList
@@ -79,12 +82,14 @@ export default function Navbar() {
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
-                    <Button className="rounded-full p-3 font-medium text-white w-full">
-                      Pre - Order Now
-                    </Button>
+                    <Link href="/contact" className="w-full">
+                      <Button className="rounded-full p-3 font-medium text-white w-full">
+                        Contact Us
+                      </Button>
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link href="/waitlist">
+                    <Link href="/waitlist" className="w-full">
                       <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300 w-full">
                         Join WaitList
                       </Button>
