@@ -50,9 +50,11 @@ export default function Navbar() {
                 <Button className="rounded-full p-3 font-medium text-white">
                   Pre - Order Now
                 </Button>
-                <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
-                  Join WaitList
-                </Button>
+                <Link href="/waitlist">
+                  <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
+                    Join WaitList
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -82,9 +84,11 @@ export default function Navbar() {
                     </Button>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300 w-full">
-                      Join WaitList
-                    </Button>
+                    <Link href="/waitlist">
+                      <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300 w-full">
+                        Join WaitList
+                      </Button>
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>

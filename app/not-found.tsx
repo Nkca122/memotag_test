@@ -43,7 +43,7 @@ export default function Error() {
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Link href="/" className="w-full sm:w-auto">
             <Button 
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 px-8 text-lg text-white rounded-full font-bold"
+              className="w-full bg-primary hover:bg-primary/90 py-6 px-8 text-lg text-white rounded-full font-bold"
             >
               Return Home
             </Button>

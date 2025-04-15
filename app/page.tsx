@@ -18,6 +18,7 @@ import StatCard from "@/components/stat_card";
 import { Pie_Chart } from "@/components/pie_chart";
 import DementiaLineChart from "@/components/line_chart";
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
@@ -45,9 +46,11 @@ export default function Home() {
             cognitive health tracking for loved ones.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-4">
-            <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium px-6 py-3 rounded-full shadow-lg shadow-green-500/20 hover:shadow-green-500/30 transition-all duration-300">
-              Join WaitList
-            </Button>
+            <Link href="/waitlist">
+              <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-medium px-6 py-3 rounded-full shadow-lg shadow-green-500/20 hover:shadow-green-500/30 transition-all duration-300">
+                Join WaitList
+              </Button>
+            </Link>
           </div>
           {/* Subtle decorative element */}
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
@@ -419,7 +422,6 @@ Stimulation Therapy"
                   </li>
                 </ol>
               </div>
-             
             </div>
           </div>
         </div>
