@@ -51,13 +51,7 @@ export default function Navbar() {
                   Pre - Order Now
                 </Button>
                 <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
-                  <Image
-                    src="/assets/whatsapp-icon.svg"
-                    alt=""
-                    height={16}
-                    width={16}
-                  />
-                  Join Community
+                  Join WaitList
                 </Button>
               </div>
             </div>
@@ -70,24 +64,16 @@ export default function Navbar() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent>
                   <DropdownMenuItem>
-                    <Link href="/">
-                      Home
-                    </Link>
+                    <Link href="/">Home</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link href="/about">
-                      About us
-                    </Link>
+                    <Link href="/about">About us</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link href="/mindmap">
-                      MindMap
-                    </Link>
+                    <Link href="/mindmap">MindMap</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link href="/caregivers">
-                      Caregivers
-                    </Link>
+                    <Link href="/caregivers">Caregivers</Link>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem>
@@ -97,13 +83,7 @@ export default function Navbar() {
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <Button className="flex gap-2 items-center justify-center bg-gradient-to-r from-[#60D669] to-[#00B30E] text-white text-nowrap text-sm font-medium p-3 rounded-full shadow-lg transition duration-300">
-                      <Image
-                        src="/assets/whatsapp-icon.svg"
-                        alt=""
-                        height={16}
-                        width={16}
-                      />
-                      Join Community
+                      Join WaitList
                     </Button>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
