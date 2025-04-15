@@ -13,15 +13,11 @@ import {
   Hospital,
   PersonStanding,
 } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardFooter,
-} from "@/components/ui/card";
-
 import InfiniteCarousel from "@/components/infinite_carousel";
 import StatCard from "@/components/stat_card";
+import { Pie_Chart } from "@/components/pie_chart";
+import DementiaLineChart from "@/components/line_chart";
+import { Card, CardContent, CardDescription } from "@/components/ui/card";
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full">
@@ -65,7 +61,6 @@ export default function Home() {
       {/* Service Users */}
       <section className="w-full flex flex-col items-center py-16 md:py-24 gap-2 text-center">
         <div className="flex flex-col items-center gap-2 px-4">
-          {" "}
           <h1 className="text-2xl md:text-4xl font-extrabold">
             <span className="inline-block text-blue-600 dark:text-blue-400">
               Trusted
@@ -86,6 +81,76 @@ export default function Home() {
           <Image src="/assets/logo4.svg" fill alt="" />
           <Image src="/assets/logo6.svg" fill alt="" />
         </InfiniteCarousel>
+      </section>
+      {/* Problem Section */}
+      <section className="py-16 md:py-24 w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-8 max-w-7xl">
+          {/* Header section with improved responsive layout */}
+          <div className="flex flex-col-reverse md:flex-row items-start md:items-center gap-8 md:gap-16 w-full mb-12">
+            <p className="md:flex-1 text-gray-600 dark:text-gray-400 md:text-start text-sm">
+              Dementia is one of the fastest-growing global health challenges.
+              Over 55 million people are currently living with the condition —
+              and that number is expected to more than double by 2050. With one
+              new case every 3 seconds, early detection and proactive care have
+              never been more urgent. The chart below shows the alarming growth
+              in global dementia cases over the years.
+            </p>
+            <h2 className="md:flex-1 text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-500 dark:from-gray-100 dark:via-gray-300 dark:to-gray-400 bg-clip-text text-transparent md:text-end">
+              A Global Health Crisis
+              <br />
+              <span className="text-blue-600 dark:text-blue-400">
+                The Rapid Rise
+              </span>{" "}
+              <br />
+              of Dementia Worldwide
+            </h2>
+          </div>
+
+          {/* Cards section with improved width control */}
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="col-span-1">
+              <Card className="h-full w-full">
+                <CardContent className="p-6 flex flex-col justify-center items-center h-full">
+                  <div className="flex justify-center items-center">
+                    <div className="h-64 aspect-square">
+                      <Pie_Chart />
+                    </div>
+                  </div>
+
+                  <div className="mt-4 w-full">
+                    <p className="text-center text-gray-600 dark:text-gray-300">
+                      Up to{" "}
+                      <span className="font-bold text-blue-600 dark:text-blue-400">
+                        75% of people
+                      </span>{" "}
+                      with dementia are undiagnosed especially in low and
+                      middle-income countries
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="w-full col-span-1 md:col-span-2">
+              <Card className="h-full w-full">
+                <CardContent className="p-6 flex flex-col justify-center items-center h-full">
+                  <div className="w-full h-64">
+                    <DementiaLineChart />
+                  </div>
+                  <div className="mt-4 w-full">
+                    <p className="text-center text-gray-600 dark:text-gray-300">
+                      <span className="font-bold text-blue-600 dark:text-blue-400">
+                        10 million new cases
+                      </span>{" "}
+                      are diagnosed each year
+                      <br />
+                      (That's one every ~3 seconds!)
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
       </section>
       {/* Features Section */}
       <section className="py-16 md:py-24 container mx-auto px-4 sm:px-6 lg:px-8">
@@ -359,11 +424,7 @@ Stimulation Therapy"
                   </li>
                 </ol>
               </div>
-              <div className="pb-4 pt-2">
-                <button className="mt-5 py-3 px-6 bg-gradient-to-r from-blue-600 to-blue-700 dark:from-blue-700 dark:via-blue-600 dark:to-blue-700 border-0 dark:border dark:border-blue-400 text-white text-sm md:text-base font-medium rounded-full shadow-lg flex items-center justify-center hover:bg-blue-500 dark:hover:bg-blue-600 transition duration-300 hover:shadow-blue-300/30 dark:hover:shadow-blue-500/20 hover:shadow-xl">
-                  Exclusive Insights
-                </button>
-              </div>
+             
             </div>
           </div>
         </div>

@@ -170,9 +170,9 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="container grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="container w-full grid grid-cols-1 md:grid-cols-3 items-center gap-8">
             {/* Logo and Description Column */}
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col w-full justify-center items-center">
               <Image
                 src="/assets/memotag-logo.svg"
                 alt="Memotag Logo"
@@ -180,17 +180,17 @@ export default function Footer() {
                 height={40}
                 className="h-10 w-auto"
               />
-              <p className="text-sm text-gray-700 max-w-md mt-2">
+              <p className="text-sm text-gray-700 max-w-md mt-2 text-center">
                 An AI-wearable with cognitive health tracking & data analysis
                 tool for dementia & elder caregiving.
               </p>
             </div>
 
             {/* Explore Column */}
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 w-full">
               <div>
-                <h3 className="font-medium text-base mb-3">Explore</h3>
-                <ul className="space-y-2">
+                <h3 className="font-medium text-base mb-3 text-center">Explore</h3>
+                <ul className="space-y-2 text-center">
                   <li>
                     <Button
                       variant="link"
@@ -243,11 +243,11 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Try Memotag Column */}
+            {/* Try Memotag & Get In Touch Column */}
             <div className="grid grid-cols-1 gap-4">
               <div>
-                <h3 className="font-medium text-base mb-3">Try Memotag</h3>
-                <ul className="space-y-2">
+                <h3 className="font-medium text-base mb-3 text-center">Try Memotag</h3>
+                <ul className="space-y-2 text-center">
                   <li>
                     <Button
                       variant="link"
@@ -258,22 +258,18 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-            </div>
-
-            {/* Get In touch Column */}
-            <div className="grid grid-cols-1 gap-4">
               <div>
-                <h3 className="font-medium text-base mb-3">Get In touch</h3>
-                <ul className="space-y-2">
+                <h3 className="font-medium text-base mb-3 text-center">Get In touch</h3>
+                <ul className="space-y-2 text-center">
                   <li className="text-gray-700">contact@memotag.io</li>
                   <li className="text-gray-700">+91 8800506622</li>
                 </ul>
 
                 {/* Social Media Icons */}
-                <div className="flex gap-4 mt-4">
+                <div className="flex w-full justify-center items-center gap-4 mt-4">
                   <Button
                     size="icon"
-                    variant="ghost"
+                    variant="destructive"
                     className="rounded-full h-10 w-10"
                   >
                     <Facebook className="h-5 w-5" />
@@ -281,7 +277,6 @@ export default function Footer() {
                   </Button>
                   <Button
                     size="icon"
-                    variant="ghost"
                     className="rounded-full h-10 w-10"
                   >
                     <Instagram className="h-5 w-5" />
@@ -289,7 +284,7 @@ export default function Footer() {
                   </Button>
                   <Button
                     size="icon"
-                    variant="ghost"
+                    variant="destructive"
                     className="rounded-full h-10 w-10"
                   >
                     <Linkedin className="h-5 w-5" />
@@ -298,6 +293,8 @@ export default function Footer() {
                 </div>
               </div>
             </div>
+
+          
           </div>
         </div>
       </footer>
